@@ -6,28 +6,15 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// SAMPLE DATABASE
 let users = [];
 let students = [];
 let attendance = [];
-
-/*
-=================================
-HOME
-=================================
-*/
 
 app.get("/", (req, res) => {
   res.json({
     message: "SmartAttend Backend Running"
   });
 });
-
-/*
-=================================
-REGISTER
-=================================
-*/
 
 app.post("/register", (req, res) => {
 
@@ -41,12 +28,6 @@ app.post("/register", (req, res) => {
   });
 
 });
-
-/*
-=================================
-LOGIN
-=================================
-*/
 
 app.post("/login", (req, res) => {
 
@@ -71,12 +52,6 @@ app.post("/login", (req, res) => {
 
 });
 
-/*
-=================================
-ADD STUDENT
-=================================
-*/
-
 app.post("/students", (req, res) => {
 
   const student = req.body;
@@ -90,23 +65,11 @@ app.post("/students", (req, res) => {
 
 });
 
-/*
-=================================
-GET STUDENTS
-=================================
-*/
-
 app.get("/students", (req, res) => {
 
   res.json(students);
 
 });
-
-/*
-=================================
-MARK ATTENDANCE
-=================================
-*/
 
 app.post("/attendance", (req, res) => {
 
@@ -121,23 +84,11 @@ app.post("/attendance", (req, res) => {
 
 });
 
-/*
-=================================
-GET ATTENDANCE
-=================================
-*/
-
 app.get("/attendance", (req, res) => {
 
   res.json(attendance);
 
 });
-
-/*
-=================================
-SERVER
-=================================
-*/
 
 app.listen(5000, () => {
 
